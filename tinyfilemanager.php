@@ -1710,7 +1710,7 @@ if (isset($_GET['view'])) {
                 <strong>File size:</strong> <?php echo ($filesize_raw <= 1000) ? "$filesize_raw bytes" : $filesize; ?><br>
                 <strong>MIME-type:</strong> <?php echo $mime_type ?><br>
                 <strong>Prefetch:</strong><br>
-                <code>prefetch <?php echo $file ?> sha1:<?php print(sha1_file(fm_enc(fm_convert_win($file_path)))) ?> size:<?php echo $filesize_raw;?> <?php echo fm_enc(preg_replace( '~\s~', '%20', $file_url)); ?> sha256:<?php echo hash('sha256',fm_enc(fm_convert_win($file_path)));?></code><br>
+                <code>prefetch <?php echo $file ?> sha1:<?php print(sha1_file(fm_enc(fm_convert_win($file_path)))) ?> size:<?php echo $filesize_raw;?> <?php echo fm_enc(preg_replace( '~\s~', '%20', $file_url)); ?> sha256:<?php echo hash_file('sha256',fm_enc(fm_convert_win($file_path)));?></code><br>
                 <?php
                 // ZIP info
                 if (($is_zip || $is_gzip) && $filenames !== false) {
